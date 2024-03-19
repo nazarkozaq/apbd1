@@ -1,10 +1,18 @@
-﻿
-
-for (int i = 0; i < 10; i++)
+﻿static int FindMaxValue(int[] array)
 {
-    for (int j = 10; j > i; j--)
+    if (array == null || array.Length == 0)
     {
-        Console.Write("*");
+        throw new ArgumentException("Array is null or empty.");
     }
-    Console.WriteLine("some changes");
+
+    int max = array[0];
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (array[i] > max)
+        {
+            max = array[i];
+        }
+    }
+
+    return max;
 }
